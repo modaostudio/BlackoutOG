@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -75,259 +75,266 @@
         </div>
       </header>
 
-      <section class="hero" aria-labelledby="hero-heading">
-        <div class="hero__ambient" aria-hidden="true"></div>
-        <div class="hero__grid" aria-hidden="true"></div>
-        <div class="hero__glow" aria-hidden="true"></div>
-        <div class="hero__content">
-          <div class="hero__text">
-            <h1 id="hero-heading" class="hero__title">When the system goes dark, we see clearly.</h1>
-            <p class="hero__sub">Not for everyone. Never was.</p>
-          </div>
-          <div class="hero__ca">
-            <div class="hero-ca-card" role="group" aria-labelledby="hero-ca-label">
-              <p id="hero-ca-label" class="hero-ca-card__label">Mint</p>
-              <div class="hero-ca-card__inner">
-                <code
-                  class="hero-ca-card__addr"
-                  title="A7uNaYtbF7WpchS4t4dwkfqbUbGmmGHXGX9GcXm6pump"
-                  >A7uNaYtbF7WpchS4t4dwkfqbUbGmmGHXGX9GcXm6pump</code
-                >
-                <button type="button" class="btn btn--copy hero-ca-card__copy" id="hero-copy-mint" aria-label="Copy mint address">
-                  Copy
-                </button>
-              </div>
-            </div>
-            <span id="hero-mint-full" class="visually-hidden"
-              >A7uNaYtbF7WpchS4t4dwkfqbUbGmmGHXGX9GcXm6pump</span
-            >
-            <p class="hero-ca-card__feedback" id="hero-copy-feedback" role="status" aria-live="polite"></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="audience" aria-labelledby="audience-heading">
-        <h2 id="audience-heading" class="visually-hidden">Who this is for</h2>
-        <div class="audience__inner" data-audience-reveal>
-          <p class="audience__line reveal">This is not for everyone.</p>
-          <p class="audience__line reveal">This is for those who move without validation.</p>
-          <p class="audience__line reveal">For those who understand timing over hype.</p>
-          <p class="audience__line reveal">For those who see before others do.</p>
-        </div>
-      </section>
-
-      <section class="news" aria-labelledby="news-heading">
-        <div class="news__header">
-          <h2 id="news-heading" class="news__title">Blackout news</h2>
-          <p class="news__lede">Real-world silence. Real systems failing.</p>
-        </div>
-        <div class="news__grid">
-          <article
-            class="card card--news news-card card-spain"
-            data-news-card
-            tabindex="0"
-            aria-expanded="false"
-            aria-controls="news-detail-1"
-            id="news-card-1"
-          >
-            <div class="card__bg" aria-hidden="true"></div>
-            <div class="card__body">
-              <span class="card__meta">Spain &amp; Portugal · 2025</span>
-              <h3 class="card__title">Grid collapse</h3>
-              <p class="card__text">
-                Widespread power loss across the Iberian peninsula. Infrastructure stretched past its margin.
-              </p>
-              <a class="card__link" href="#" data-news-link>View Incident →</a>
-            </div>
-            <div class="card__expand" id="news-detail-1" aria-hidden="true">
-              <p class="card__extra">
-                Frequency instability spread before the visible trip—operators watched margins vanish in minutes, not hours.
-              </p>
-              <time class="card__time" datetime="2025-04">April 2025</time>
-            </div>
-          </article>
-
-          <article
-            class="card card--news news-card card-france"
-            data-news-card
-            tabindex="0"
-            aria-expanded="false"
-            aria-controls="news-detail-2"
-            id="news-card-2"
-          >
-            <div class="card__bg" aria-hidden="true"></div>
-            <div class="card__body">
-              <span class="card__meta">France</span>
-              <h3 class="card__title">Infrastructure disruption</h3>
-              <p class="card__text">
-                Coordinated strain on networks and supply lines. The pattern repeated where redundancy was assumed.
-              </p>
-              <a class="card__link" href="#" data-news-link>View Incident →</a>
-            </div>
-            <div class="card__expand" id="news-detail-2" aria-hidden="true">
-              <p class="card__extra">
-                Redundancy looked solid on paper; in practice, shared dependencies and timing windows aligned into a single fault surface.
-              </p>
-              <time class="card__time" datetime="2025-02">February 2025</time>
-            </div>
-          </article>
-
-          <article
-            class="card card--news news-card card-brazil"
-            data-news-card
-            tabindex="0"
-            aria-expanded="false"
-            aria-controls="news-detail-3"
-            id="news-card-3"
-          >
-            <div class="card__bg" aria-hidden="true"></div>
-            <div class="card__body">
-              <span class="card__meta">Brazil</span>
-              <h3 class="card__title">Nationwide outage</h3>
-              <p class="card__text">
-                A country-sized blind spot. Millions in the dark while dependencies stacked silently.
-              </p>
-              <a class="card__link" href="#" data-news-link>View Incident →</a>
-            </div>
-            <div class="card__expand" id="news-detail-3" aria-hidden="true">
-              <p class="card__extra">
-                Restoration lagged not from a single switch, but from cascaded interlocks and the time required to re-sequence safely.
-              </p>
-              <time class="card__time" datetime="2024-08">August 2024</time>
-            </div>
-          </article>
-
-          <article
-            class="card card--news news-card card-chile"
-            data-news-card
-            tabindex="0"
-            aria-expanded="false"
-            aria-controls="news-detail-4"
-            id="news-card-4"
-          >
-            <div class="card__bg" aria-hidden="true"></div>
-            <div class="card__body">
-              <span class="card__meta">Chile</span>
-              <h3 class="card__title">System failure</h3>
-              <p class="card__text">
-                Cascade effects exposed brittle edges. What held until it didn’t.
-              </p>
-              <a class="card__link" href="#" data-news-link>View Incident →</a>
-            </div>
-            <div class="card__expand" id="news-detail-4" aria-hidden="true">
-              <p class="card__extra">
-                Edge cases accumulated invisibly until a routine event crossed a threshold no dashboard had named.
-              </p>
-              <time class="card__time" datetime="2025-03">March 2025</time>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="signals-2026" aria-labelledby="signals-2026-heading">
-        <div class="signals-2026__noise" aria-hidden="true"></div>
-        <div class="signals-2026__gradient" aria-hidden="true"></div>
-        <div class="signals-2026__inner" data-signals-reveal>
-          <p class="signals-2026__micro signals-2026__reveal">System Observation</p>
-          <p id="signals-2026-heading" class="signals-2026__eyebrow signals-2026__reveal">2026 Signals</p>
-          <h2 class="signals-2026__headline">
-            <span class="signals-2026__headline-line signals-2026__reveal">2025 showed the cracks.</span>
-            <span class="signals-2026__headline-line signals-2026__reveal">2026 may reveal how deep they go.</span>
+      <section class="page-header" aria-labelledby="page-header-heading">
+        <div class="page-header__inner">
+          <p class="page-header__eyebrow">System observation</p>
+          <h2 id="page-header-heading" class="page-header__title">
+            Infrastructure fails in silence first. Signal does not.
           </h2>
-          <div class="signals-2026__prose">
-            <p class="signals-2026__line signals-2026__reveal">Four regions. Different failures. Same pattern.</p>
-            <p class="signals-2026__line signals-2026__reveal">
-              Systems did not collapse instantly.<br />
-              They weakened quietly first.
-            </p>
-            <p class="signals-2026__line signals-2026__reveal">
-              As demand rises and systems stretch,<br />
-              instability becomes harder to contain.
-            </p>
-            <p class="signals-2026__line signals-2026__reveal">No one calls it a crisis yet.</p>
-            <p class="signals-2026__line signals-2026__reveal">But signals rarely announce themselves.</p>
-          </div>
+          <p class="page-header__meta">Blackout maps the gap between assumed stability and what the grid actually does.</p>
         </div>
       </section>
 
-      <section class="signal-access" id="signal-access" aria-labelledby="signal-access-heading">
-        <div class="signal-access__inner signal-access__inner--wide">
-          <h2 id="signal-access-heading" class="signal-access__title">Signal Access</h2>
-          <p class="signal-access__lede">Some signals eventually become visible.</p>
+      <div
+        class="news-ticker"
+        role="region"
+        aria-label="Breaking news ticker"
+      >
+        <div class="news-ticker__mask">
+          <div class="news-ticker__track">
+            <p class="news-ticker__text">
+              <span class="news-ticker__kicker">Breaking News:</span>
+              Economies buckle under debt and inflation, war redraws borders faster than treaties can hold, and with Donald Trump back in the Oval Office, markets and alliances are repricing overnight — grid operators from Berlin to Buenos Aires quietly warn: the next civilizational blackout may arrive as policy, not accident. Fuel your conviction before the feed goes dark.
+            </p>
+            <p class="news-ticker__text" aria-hidden="true">
+              <span class="news-ticker__kicker">Breaking News:</span>
+              Economies buckle under debt and inflation, war redraws borders faster than treaties can hold, and with Donald Trump back in the Oval Office, markets and alliances are repricing overnight — grid operators from Berlin to Buenos Aires quietly warn: the next civilizational blackout may arrive as policy, not accident. Fuel your conviction before the feed goes dark.
+            </p>
+          </div>
+        </div>
+      </div>
 
-          <div class="token-dashboard">
-            <div class="token-dashboard__meta">
-              <table class="token-table">
-                <caption class="visually-hidden">
-                  On-chain reference — Blackout token on Solana
-                </caption>
-                <tbody>
-                  <tr>
-                    <th scope="row">Asset</th>
-                    <td>
-                      Blackout <span class="token-table__sym">(BLACKOUT)</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Network</th>
-                    <td>Solana</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Mint</th>
-                    <td>
-                      <div class="token-table__mint">
-                        <code class="token-table__addr" title="A7uNaYtbF7WpchS4t4dwkfqbUbGmmGHXGX9GcXm6pump"
-                          >A7uNa…pump</code
-                        >
-                        <button type="button" class="btn btn--copy" id="token-copy-mint" aria-label="Copy mint address">
-                          Copy
-                        </button>
-                      </div>
-                      <span id="token-mint-full" class="visually-hidden"
-                        >A7uNaYtbF7WpchS4t4dwkfqbUbGmmGHXGX9GcXm6pump</span
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Venue</th>
-                    <td>PumpSwap · Pump.fun</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Reference</th>
-                    <td>
-                      <a
-                        class="token-table__link"
-                        href="https://dexscreener.com/solana/A7uNaYtbF7WpchS4t4dwkfqbUbGmmGHXGX9GcXm6pump"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Dexscreener</a
-                      >
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <p class="token-table__feedback" id="token-copy-feedback" role="status" aria-live="polite"></p>
+      <section class="landing-layout" aria-label="Overview">
+        <aside class="landing-panel landing-panel--news" aria-labelledby="news-heading">
+          <div class="landing-panel__head">
+            <h2 id="news-heading" class="landing-panel__label">News</h2>
+            <p class="landing-panel__sub">Grid events · Real failures</p>
+          </div>
+          <div class="news__grid news__grid--sidebar">
+            <article
+              class="card card--news news-card card-spain"
+              data-news-card
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="news-detail-1"
+              id="news-card-1"
+            >
+              <div class="card__bg" aria-hidden="true"></div>
+              <div class="card__body">
+                <span class="card__meta">Spain &amp; Portugal · 2025</span>
+                <h3 class="card__title">Grid collapse</h3>
+                <p class="card__text">
+                  Widespread power loss across the Iberian peninsula. Infrastructure stretched past its margin.
+                </p>
+                <a class="card__link" href="#" data-news-link>View Incident →</a>
+              </div>
+              <div class="card__expand" id="news-detail-1" aria-hidden="true">
+                <p class="card__extra">
+                  Frequency instability spread before the visible trip—operators watched margins vanish in minutes, not hours.
+                </p>
+                <time class="card__time" datetime="2025-04">April 2025</time>
+              </div>
+            </article>
+
+            <article
+              class="card card--news news-card card-france"
+              data-news-card
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="news-detail-2"
+              id="news-card-2"
+            >
+              <div class="card__bg" aria-hidden="true"></div>
+              <div class="card__body">
+                <span class="card__meta">France</span>
+                <h3 class="card__title">Infrastructure disruption</h3>
+                <p class="card__text">
+                  Coordinated strain on networks and supply lines. The pattern repeated where redundancy was assumed.
+                </p>
+                <a class="card__link" href="#" data-news-link>View Incident →</a>
+              </div>
+              <div class="card__expand" id="news-detail-2" aria-hidden="true">
+                <p class="card__extra">
+                  Redundancy looked solid on paper; in practice, shared dependencies and timing windows aligned into a single fault surface.
+                </p>
+                <time class="card__time" datetime="2025-02">February 2025</time>
+              </div>
+            </article>
+
+            <article
+              class="card card--news news-card card-brazil"
+              data-news-card
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="news-detail-3"
+              id="news-card-3"
+            >
+              <div class="card__bg" aria-hidden="true"></div>
+              <div class="card__body">
+                <span class="card__meta">Brazil</span>
+                <h3 class="card__title">Nationwide outage</h3>
+                <p class="card__text">
+                  A country-sized blind spot. Millions in the dark while dependencies stacked silently.
+                </p>
+                <a class="card__link" href="#" data-news-link>View Incident →</a>
+              </div>
+              <div class="card__expand" id="news-detail-3" aria-hidden="true">
+                <p class="card__extra">
+                  Restoration lagged not from a single switch, but from cascaded interlocks and the time required to re-sequence safely.
+                </p>
+                <time class="card__time" datetime="2024-08">August 2024</time>
+              </div>
+            </article>
+
+            <article
+              class="card card--news news-card card-chile"
+              data-news-card
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="news-detail-4"
+              id="news-card-4"
+            >
+              <div class="card__bg" aria-hidden="true"></div>
+              <div class="card__body">
+                <span class="card__meta">Chile</span>
+                <h3 class="card__title">System failure</h3>
+                <p class="card__text">
+                  Cascade effects exposed brittle edges. What held until it didn’t.
+                </p>
+                <a class="card__link" href="#" data-news-link>View Incident →</a>
+              </div>
+              <div class="card__expand" id="news-detail-4" aria-hidden="true">
+                <p class="card__extra">
+                  Edge cases accumulated invisibly until a routine event crossed a threshold no dashboard had named.
+                </p>
+                <time class="card__time" datetime="2025-03">March 2025</time>
+              </div>
+            </article>
+          </div>
+        </aside>
+
+        <div class="landing-panel landing-panel--main">
+          <section class="hero hero--in-layout" aria-labelledby="hero-heading">
+            <div class="hero__ambient" aria-hidden="true"></div>
+            <div class="hero__grid" aria-hidden="true"></div>
+            <div class="hero__glow" aria-hidden="true"></div>
+            <div class="hero__content">
+              <div class="hero__text">
+                <h1 id="hero-heading" class="hero__title">When the system goes dark, we see clearly.</h1>
+                <p class="hero__sub">Not for everyone. Never was.</p>
+              </div>
+              <div class="hero__ca">
+                <div class="hero-ca-card" role="group" aria-labelledby="hero-ca-label">
+                  <p id="hero-ca-label" class="hero-ca-card__label">Mint</p>
+                  <div class="hero-ca-card__inner">
+                    <code
+                      class="hero-ca-card__addr"
+                      title="A7uNaYtbF7WpchS4t4dwkfqbUbGmmGHXGX9GcXm6pump"
+                      >A7uNaYtbF7WpchS4t4dwkfqbUbGmmGHXGX9GcXm6pump</code
+                    >
+                    <button type="button" class="btn btn--copy hero-ca-card__copy" id="hero-copy-mint" aria-label="Copy mint address">
+                      Copy
+                    </button>
+                  </div>
+                </div>
+                <span id="hero-mint-full" class="visually-hidden"
+                  >A7uNaYtbF7WpchS4t4dwkfqbUbGmmGHXGX9GcXm6pump</span
+                >
+                <p class="hero-ca-card__feedback" id="hero-copy-feedback" role="status" aria-live="polite"></p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="landing-panel landing-panel--chart" aria-labelledby="chart-panel-heading">
+          <div class="landing-panel__head">
+            <h2 id="chart-panel-heading" class="landing-panel__label">Chart</h2>
+            <p class="landing-panel__sub">Liquidity &amp; price · DEX Screener</p>
+          </div>
+          <div class="token-chart token-chart--panel">
+            <div class="token-chart__frame">
+              <iframe
+                title="Blackout — DEX Screener chart"
+                src="https://dexscreener.com/solana/A7uNaYtbF7WpchS4t4dwkfqbUbGmmGHXGX9GcXm6pump?embed=1"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allow="clipboard-write"
+              ></iframe>
+            </div>
+            <a
+              class="token-chart__open"
+              href="https://dexscreener.com/solana/A7uNaYtbF7WpchS4t4dwkfqbUbGmmGHXGX9GcXm6pump"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open full chart →
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="manifesto" aria-labelledby="manifesto-heading">
+        <h2 id="manifesto-heading" class="visually-hidden">Who Blackout is for and what 2026 signals mean</h2>
+        <div class="manifesto__noise" aria-hidden="true"></div>
+        <div class="manifesto__gradient" aria-hidden="true"></div>
+        <div class="manifesto__scan" aria-hidden="true"></div>
+        <div class="manifesto__inner">
+          <header class="manifesto__hud">
+            <span class="manifesto__hud-brand">BLACKOUT</span>
+            <span class="manifesto__hud-sep" aria-hidden="true">·</span>
+            <span class="manifesto__hud-tag">SIGNAL LAYER</span>
+            <span class="manifesto__hud-pill" title="Routing">ROUTED · SOLANA</span>
+          </header>
+
+          <div class="manifesto__panels" data-manifesto-reveal>
+            <div class="manifesto__panel manifesto__panel--access">
+              <div class="manifesto__panel-head">
+                <span class="manifesto__panel-idx">01</span>
+                <span class="manifesto__panel-label">Access</span>
+              </div>
+              <p class="manifesto__line manifesto__reveal">Not for everyone. Never was.</p>
+              <p class="manifesto__line manifesto__reveal">
+                For wallets that move before the timeline catches up — no crowd to cosign the entry.
+              </p>
+              <p class="manifesto__line manifesto__reveal">Conviction over clout. Timing over hype.</p>
+              <p class="manifesto__line manifesto__line--accent manifesto__reveal">
+                If you need permission to click, you’re already priced out.
+              </p>
             </div>
 
-            <div class="token-chart">
-              <p class="token-chart__label">Liquidity &amp; price</p>
-              <div class="token-chart__frame">
-                <iframe
-                  title="Blackout — DEX Screener chart"
-                  src="https://dexscreener.com/solana/A7uNaYtbF7WpchS4t4dwkfqbUbGmmGHXGX9GcXm6pump?embed=1"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  allow="clipboard-write"
-                ></iframe>
+            <div class="manifesto__connector" aria-hidden="true">
+              <span class="manifesto__connector-line"></span>
+              <span class="manifesto__connector-node"></span>
+              <span class="manifesto__connector-line"></span>
+            </div>
+
+            <div class="manifesto__panel manifesto__panel--signal">
+              <div class="manifesto__panel-head">
+                <span class="manifesto__panel-idx">02</span>
+                <span class="manifesto__panel-label">Macro · 2026</span>
               </div>
-              <a
-                class="token-chart__open"
-                href="https://dexscreener.com/solana/A7uNaYtbF7WpchS4t4dwkfqbUbGmmGHXGX9GcXm6pump"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open chart →
-              </a>
+              <p class="manifesto__micro manifesto__reveal">Grid → chain · same entropy, different venue</p>
+              <h3 class="manifesto__headline">
+                <span class="manifesto__headline-line manifesto__reveal">2025 wrote the cracks into the record.</span>
+                <span class="manifesto__headline-line manifesto__reveal">2026 prices how deep they go.</span>
+              </h3>
+              <div class="manifesto__prose">
+                <p class="manifesto__prose-line manifesto__reveal">
+                  Four regions. Different flags. One failure pattern repeating off-chain.
+                </p>
+                <p class="manifesto__prose-line manifesto__reveal">
+                  Systems don’t rug in a single block — they fray quietly while dashboards still read green.
+                </p>
+                <p class="manifesto__prose-line manifesto__reveal">
+                  Demand stacks, margins vanish, redundancy becomes a story on paper. Containment gets expensive.
+                </p>
+                <p class="manifesto__prose-line manifesto__prose-line--terminal manifesto__reveal">
+                  Nobody mints a headline for “crisis.” It shows up in liquidity and latency first.
+                </p>
+              </div>
+              <p class="manifesto__hash manifesto__reveal" aria-hidden="true">
+                0xBLACKOUT · SIG<span class="manifesto__hash-dim">…</span>VERIFY_ON_CHAIN
+              </p>
             </div>
           </div>
         </div>

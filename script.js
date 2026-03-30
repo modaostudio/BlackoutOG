@@ -5,8 +5,7 @@
   var main = document.getElementById("main");
   var enterBtn = document.getElementById("enter-blackout");
   var lines = intro ? intro.querySelectorAll("[data-intro-line]") : [];
-  var audienceReveal = document.querySelector("[data-audience-reveal]");
-  var signalsReveal = document.querySelector("[data-signals-reveal]");
+  var manifestoReveal = document.querySelector("[data-manifesto-reveal]");
   var newsCards = document.querySelectorAll("[data-news-card]");
 
   var LINE_DELAY_MS = 1400;
@@ -152,11 +151,6 @@
 
     var setups = [
       {
-        btn: document.getElementById("token-copy-mint"),
-        full: document.getElementById("token-mint-full"),
-        feedback: document.getElementById("token-copy-feedback")
-      },
-      {
         btn: document.getElementById("hero-copy-mint"),
         full: document.getElementById("hero-mint-full"),
         feedback: document.getElementById("hero-copy-feedback")
@@ -220,8 +214,7 @@
   }
 
   showIntroSequence();
-  observeReveal(audienceReveal);
-  observeReveal(signalsReveal);
+  observeReveal(manifestoReveal);
   initNewsCardBackgrounds();
   initNewsCards();
   initMintCopyButtons();
