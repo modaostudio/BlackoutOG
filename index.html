@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Blackout OG — when the system goes dark, we see clearly." />
+    <title>Blackout OG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Intro overlay -->
+    <div id="intro" class="intro" aria-hidden="false">
+      <div class="intro__inner">
+        <p class="intro__line" data-intro-line>Do you see anything?</p>
+        <p class="intro__line" data-intro-line>Most people don't.</p>
+        <p class="intro__line" data-intro-line>Because they wait for the light.</p>
+        <p class="intro__line" data-intro-line>We don't.</p>
+        <div class="intro__cta-wrap">
+          <button type="button" class="btn btn--primary" id="enter-blackout" hidden>
+            Enter the Blackout
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <main id="main" class="main" hidden aria-hidden="true">
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero__bg hero__bg--a" aria-hidden="true"></div>
+        <div class="hero__bg hero__bg--b" aria-hidden="true"></div>
+        <div class="hero__grain" aria-hidden="true"></div>
+        <div class="hero__content">
+          <h1 id="hero-heading" class="hero__title">When the system goes dark, we see clearly.</h1>
+          <p class="hero__sub">Not for everyone. Never was.</p>
+        </div>
+      </section>
+
+      <section class="audience" aria-labelledby="audience-heading">
+        <h2 id="audience-heading" class="visually-hidden">Who this is for</h2>
+        <div class="audience__inner" data-audience-reveal>
+          <p class="audience__line reveal">This is not for everyone.</p>
+          <p class="audience__line reveal">This is for those who move without validation.</p>
+          <p class="audience__line reveal">For those who understand timing over hype.</p>
+          <p class="audience__line reveal">For those who see before others do.</p>
+        </div>
+      </section>
+
+      <section class="news" aria-labelledby="news-heading">
+        <div class="news__header">
+          <h2 id="news-heading" class="news__title">Blackout news</h2>
+          <p class="news__lede">Real-world silence. Real systems failing.</p>
+        </div>
+        <div class="news__grid">
+          <article
+            class="card card--news news-card card-spain"
+            data-news-card
+            tabindex="0"
+            aria-expanded="false"
+            aria-controls="news-detail-1"
+            id="news-card-1"
+          >
+            <div class="card__bg" aria-hidden="true"></div>
+            <div class="card__body">
+              <span class="card__meta">Spain &amp; Portugal · 2025</span>
+              <h3 class="card__title">Grid collapse</h3>
+              <p class="card__text">
+                Widespread power loss across the Iberian peninsula. Infrastructure stretched past its margin.
+              </p>
+              <a class="card__link" href="#" data-news-link>View Incident →</a>
+            </div>
+            <div class="card__expand" id="news-detail-1" aria-hidden="true">
+              <p class="card__extra">
+                Frequency instability spread before the visible trip—operators watched margins vanish in minutes, not hours.
+              </p>
+              <time class="card__time" datetime="2025-04">April 2025</time>
+            </div>
+          </article>
+
+          <article
+            class="card card--news news-card card-france"
+            data-news-card
+            tabindex="0"
+            aria-expanded="false"
+            aria-controls="news-detail-2"
+            id="news-card-2"
+          >
+            <div class="card__bg" aria-hidden="true"></div>
+            <div class="card__body">
+              <span class="card__meta">France</span>
+              <h3 class="card__title">Infrastructure disruption</h3>
+              <p class="card__text">
+                Coordinated strain on networks and supply lines. The pattern repeated where redundancy was assumed.
+              </p>
+              <a class="card__link" href="#" data-news-link>View Incident →</a>
+            </div>
+            <div class="card__expand" id="news-detail-2" aria-hidden="true">
+              <p class="card__extra">
+                Redundancy looked solid on paper; in practice, shared dependencies and timing windows aligned into a single fault surface.
+              </p>
+              <time class="card__time" datetime="2025-02">February 2025</time>
+            </div>
+          </article>
+
+          <article
+            class="card card--news news-card card-brazil"
+            data-news-card
+            tabindex="0"
+            aria-expanded="false"
+            aria-controls="news-detail-3"
+            id="news-card-3"
+          >
+            <div class="card__bg" aria-hidden="true"></div>
+            <div class="card__body">
+              <span class="card__meta">Brazil</span>
+              <h3 class="card__title">Nationwide outage</h3>
+              <p class="card__text">
+                A country-sized blind spot. Millions in the dark while dependencies stacked silently.
+              </p>
+              <a class="card__link" href="#" data-news-link>View Incident →</a>
+            </div>
+            <div class="card__expand" id="news-detail-3" aria-hidden="true">
+              <p class="card__extra">
+                Restoration lagged not from a single switch, but from cascaded interlocks and the time required to re-sequence safely.
+              </p>
+              <time class="card__time" datetime="2024-08">August 2024</time>
+            </div>
+          </article>
+
+          <article
+            class="card card--news news-card card-chile"
+            data-news-card
+            tabindex="0"
+            aria-expanded="false"
+            aria-controls="news-detail-4"
+            id="news-card-4"
+          >
+            <div class="card__bg" aria-hidden="true"></div>
+            <div class="card__body">
+              <span class="card__meta">Chile</span>
+              <h3 class="card__title">System failure</h3>
+              <p class="card__text">
+                Cascade effects exposed brittle edges. What held until it didn’t.
+              </p>
+              <a class="card__link" href="#" data-news-link>View Incident →</a>
+            </div>
+            <div class="card__expand" id="news-detail-4" aria-hidden="true">
+              <p class="card__extra">
+                Edge cases accumulated invisibly until a routine event crossed a threshold no dashboard had named.
+              </p>
+              <time class="card__time" datetime="2025-03">March 2025</time>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="philosophy" aria-labelledby="philosophy-heading">
+        <p id="philosophy-heading" class="philosophy__label">Blackout is not empty.</p>
+        <div class="philosophy__inner" data-philosophy-reveal>
+          <p class="philosophy__line reveal">Most people see nothing.</p>
+          <p class="philosophy__line reveal">We see compression.</p>
+          <p class="philosophy__line reveal">Systems don’t fail instantly.</p>
+          <p class="philosophy__line reveal">They collapse quietly first.</p>
+          <p class="philosophy__line reveal">That’s where we operate.</p>
+        </div>
+      </section>
+
+      <section class="final-cta" aria-labelledby="cta-heading">
+        <p id="cta-heading" class="final-cta__text">You either see it… or you don’t.</p>
+        <button type="button" class="btn btn--primary btn--large" id="enter-circle">
+          Enter the Circle
+        </button>
+      </section>
+
+      <footer class="footer">
+        <p class="footer__mark">Blackout OG</p>
+      </footer>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
