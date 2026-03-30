@@ -4,10 +4,9 @@
   var intro = document.getElementById("intro");
   var main = document.getElementById("main");
   var enterBtn = document.getElementById("enter-blackout");
-  var circleBtn = document.getElementById("enter-circle");
   var lines = intro ? intro.querySelectorAll("[data-intro-line]") : [];
   var audienceReveal = document.querySelector("[data-audience-reveal]");
-  var philosophyReveal = document.querySelector("[data-philosophy-reveal]");
+  var signalsReveal = document.querySelector("[data-signals-reveal]");
   var newsCards = document.querySelectorAll("[data-news-card]");
 
   var LINE_DELAY_MS = 1400;
@@ -135,6 +134,62 @@
     });
   }
 
+  function initMintCopyButtons() {
+    function fallbackCopy(text, onDone) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+      } catch (e) {}
+      document.body.removeChild(ta);
+      if (onDone) onDone();
+    }
+
+    var setups = [
+      {
+        btn: document.getElementById("token-copy-mint"),
+        full: document.getElementById("token-mint-full"),
+        feedback: document.getElementById("token-copy-feedback")
+      },
+      {
+        btn: document.getElementById("hero-copy-mint"),
+        full: document.getElementById("hero-mint-full"),
+        feedback: document.getElementById("hero-copy-feedback")
+      }
+    ];
+
+    setups.forEach(function (pair) {
+      if (!pair.btn || !pair.full || !pair.feedback) return;
+
+      var copyTimer = null;
+
+      function copyAddress() {
+        var text = pair.full.textContent.trim();
+        var done = function () {
+          pair.feedback.textContent = "Copied";
+          if (copyTimer) window.clearTimeout(copyTimer);
+          copyTimer = window.setTimeout(function () {
+            pair.feedback.textContent = "";
+          }, 2200);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(function () {
+            fallbackCopy(text, done);
+          });
+        } else {
+          fallbackCopy(text, done);
+        }
+      }
+
+      pair.btn.addEventListener("click", copyAddress);
+    });
+  }
+
   function initNewsCards() {
     newsCards.forEach(function (card) {
       card.addEventListener("click", function (e) {
@@ -164,15 +219,10 @@
     enterBtn.addEventListener("click", leaveIntro);
   }
 
-  if (circleBtn) {
-    circleBtn.addEventListener("click", function () {
-      circleBtn.blur();
-    });
-  }
-
   showIntroSequence();
   observeReveal(audienceReveal);
-  observeReveal(philosophyReveal);
+  observeReveal(signalsReveal);
   initNewsCardBackgrounds();
   initNewsCards();
+  initMintCopyButtons();
 })();
