@@ -45,13 +45,34 @@
         This page needs JavaScript enabled.
       </div>
     </noscript>
+
     <!-- Intro overlay -->
     <div id="intro" class="intro" aria-hidden="false">
       <div class="intro__inner">
-        <p class="intro__line" data-intro-line="">Do you see anything?</p>
-        <p class="intro__line" data-intro-line="">Most people don't.</p>
-        <p class="intro__line" data-intro-line="">Because they wait for the light.</p>
-        <p class="intro__line" data-intro-line="">We don't.</p>
+        <p class="intro__line" data-intro-line="" data-text="Do you see anything?">
+          <span class="visually-hidden">Do you see anything?</span>
+          <span class="intro__typed-shell" aria-hidden="true">
+            <span class="intro__typed"></span><span class="intro__caret intro__caret--off"></span>
+          </span>
+        </p>
+        <p class="intro__line" data-intro-line="" data-text="Most people don't.">
+          <span class="visually-hidden">Most people don't.</span>
+          <span class="intro__typed-shell" aria-hidden="true">
+            <span class="intro__typed"></span><span class="intro__caret intro__caret--off"></span>
+          </span>
+        </p>
+        <p class="intro__line" data-intro-line="" data-text="Because they wait for the light.">
+          <span class="visually-hidden">Because they wait for the light.</span>
+          <span class="intro__typed-shell" aria-hidden="true">
+            <span class="intro__typed"></span><span class="intro__caret intro__caret--off"></span>
+          </span>
+        </p>
+        <p class="intro__line" data-intro-line="" data-text="We don't.">
+          <span class="visually-hidden">We don't.</span>
+          <span class="intro__typed-shell" aria-hidden="true">
+            <span class="intro__typed"></span><span class="intro__caret intro__caret--off"></span>
+          </span>
+        </p>
         <div class="intro__cta-wrap">
           <button type="button" class="btn btn--primary" id="enter-blackout" hidden>
             Enter the Blackout
@@ -72,6 +93,29 @@
             decoding="async"
           />
           <span class="site-header__wordmark">Blackout OG</span>
+          <button
+            type="button"
+            class="sound-toggle"
+            id="sound-toggle"
+            aria-pressed="false"
+            aria-label="Play background music"
+            title="Background playlist — tap to mute"
+          >
+            <svg class="sound-toggle__icon sound-toggle__icon--off" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M4 9v6h4l5 5V4L8 9H4zm13.5 3A4.5 4.5 0 0 0 14 8.03v7.95A4.5 4.5 0 0 0 17.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z"
+              />
+              <path fill="currentColor" d="M1 9l12 12 1.5-1.5L2.5 7.5 1 9z" />
+            </svg>
+            <svg class="sound-toggle__icon sound-toggle__icon--on" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M4 9v6h4l5 5V4L8 9H4zm13.5 3A4.5 4.5 0 0 0 14 8.03v7.95A4.5 4.5 0 0 0 17.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z"
+              />
+            </svg>
+            <span class="sound-toggle__text">Off</span>
+          </button>
         </div>
       </header>
 
@@ -106,110 +150,388 @@
 
       <section class="landing-layout" aria-label="Overview">
         <aside class="landing-panel landing-panel--news" aria-labelledby="news-heading">
-          <div class="landing-panel__head">
-            <h2 id="news-heading" class="landing-panel__label">News</h2>
-            <p class="landing-panel__sub">Grid events · Real failures</p>
+          <div class="landing-panel__head landing-panel__head--wire">
+            <div class="x-feed__mast">
+              <span class="x-feed__mast-dot" aria-hidden="true"></span>
+              <h2 id="news-heading" class="landing-panel__label">Signal wire</h2>
+            </div>
+            <p class="landing-panel__sub">2025 grid archive · X field feed</p>
           </div>
-          <div class="news__grid news__grid--sidebar">
-            <article
-              class="card card--news news-card card-spain"
-              data-news-card
-              tabindex="0"
-              aria-expanded="false"
-              aria-controls="news-detail-1"
-              id="news-card-1"
-            >
-              <div class="card__bg" aria-hidden="true"></div>
-              <div class="card__body">
-                <span class="card__meta">Spain &amp; Portugal · 2025</span>
-                <h3 class="card__title">Grid collapse</h3>
-                <p class="card__text">
-                  Widespread power loss across the Iberian peninsula. Infrastructure stretched past its margin.
-                </p>
-                <a class="card__link" href="#" data-news-link>View Incident →</a>
-              </div>
-              <div class="card__expand" id="news-detail-1" aria-hidden="true">
-                <p class="card__extra">
-                  Frequency instability spread before the visible trip—operators watched margins vanish in minutes, not hours.
-                </p>
-                <time class="card__time" datetime="2025-04">April 2025</time>
-              </div>
-            </article>
 
-            <article
-              class="card card--news news-card card-france"
-              data-news-card
+          <div class="news-sidebar__tabs" role="tablist" aria-label="News source">
+            <button
+              type="button"
+              class="news-sidebar__tab"
+              role="tab"
+              id="tab-x"
+              aria-selected="true"
+              aria-controls="panel-x"
               tabindex="0"
-              aria-expanded="false"
-              aria-controls="news-detail-2"
-              id="news-card-2"
+              data-news-tab="x"
             >
-              <div class="card__bg" aria-hidden="true"></div>
-              <div class="card__body">
-                <span class="card__meta">France</span>
-                <h3 class="card__title">Infrastructure disruption</h3>
-                <p class="card__text">
-                  Coordinated strain on networks and supply lines. The pattern repeated where redundancy was assumed.
-                </p>
-                <a class="card__link" href="#" data-news-link>View Incident →</a>
-              </div>
-              <div class="card__expand" id="news-detail-2" aria-hidden="true">
-                <p class="card__extra">
-                  Redundancy looked solid on paper; in practice, shared dependencies and timing windows aligned into a single fault surface.
-                </p>
-                <time class="card__time" datetime="2025-02">February 2025</time>
-              </div>
-            </article>
+              X feed
+            </button>
+            <button
+              type="button"
+              class="news-sidebar__tab"
+              role="tab"
+              id="tab-grid"
+              aria-selected="false"
+              aria-controls="panel-grid"
+              tabindex="-1"
+              data-news-tab="grid"
+            >
+              2025 Grid
+            </button>
+          </div>
 
-            <article
-              class="card card--news news-card card-brazil"
-              data-news-card
-              tabindex="0"
-              aria-expanded="false"
-              aria-controls="news-detail-3"
-              id="news-card-3"
+          <div class="news-sidebar__panels">
+            <div
+              id="panel-grid"
+              class="news-sidebar__panel"
+              role="tabpanel"
+              aria-labelledby="tab-grid"
+              hidden
             >
-              <div class="card__bg" aria-hidden="true"></div>
-              <div class="card__body">
-                <span class="card__meta">Brazil</span>
-                <h3 class="card__title">Nationwide outage</h3>
-                <p class="card__text">
-                  A country-sized blind spot. Millions in the dark while dependencies stacked silently.
-                </p>
-                <a class="card__link" href="#" data-news-link>View Incident →</a>
-              </div>
-              <div class="card__expand" id="news-detail-3" aria-hidden="true">
-                <p class="card__extra">
-                  Restoration lagged not from a single switch, but from cascaded interlocks and the time required to re-sequence safely.
-                </p>
-                <time class="card__time" datetime="2024-08">August 2024</time>
-              </div>
-            </article>
+              <div class="news__grid news__grid--sidebar">
+                <article
+                  class="card card--news news-card card-spain"
+                  data-news-card
+                  tabindex="0"
+                  aria-expanded="false"
+                  aria-controls="news-detail-1"
+                  id="news-card-1"
+                >
+                  <div class="card__bg" aria-hidden="true"></div>
+                  <div class="card__body">
+                    <span class="card__meta">Spain &amp; Portugal · 2025</span>
+                    <h3 class="card__title">Grid collapse</h3>
+                    <p class="card__text">
+                      Widespread power loss across the Iberian peninsula. Infrastructure stretched past its margin.
+                    </p>
+                    <a class="card__link" href="#" data-news-link>View Incident →</a>
+                  </div>
+                  <div class="card__expand" id="news-detail-1" aria-hidden="true">
+                    <p class="card__extra">
+                      Frequency instability spread before the visible trip—operators watched margins vanish in minutes, not hours.
+                    </p>
+                    <time class="card__time" datetime="2025-04">April 2025</time>
+                  </div>
+                </article>
 
-            <article
-              class="card card--news news-card card-chile"
-              data-news-card
-              tabindex="0"
-              aria-expanded="false"
-              aria-controls="news-detail-4"
-              id="news-card-4"
+                <article
+                  class="card card--news news-card card-france"
+                  data-news-card
+                  tabindex="0"
+                  aria-expanded="false"
+                  aria-controls="news-detail-2"
+                  id="news-card-2"
+                >
+                  <div class="card__bg" aria-hidden="true"></div>
+                  <div class="card__body">
+                    <span class="card__meta">France</span>
+                    <h3 class="card__title">Infrastructure disruption</h3>
+                    <p class="card__text">
+                      Coordinated strain on networks and supply lines. The pattern repeated where redundancy was assumed.
+                    </p>
+                    <a class="card__link" href="#" data-news-link>View Incident →</a>
+                  </div>
+                  <div class="card__expand" id="news-detail-2" aria-hidden="true">
+                    <p class="card__extra">
+                      Redundancy looked solid on paper; in practice, shared dependencies and timing windows aligned into a single fault surface.
+                    </p>
+                    <time class="card__time" datetime="2025-02">February 2025</time>
+                  </div>
+                </article>
+
+                <article
+                  class="card card--news news-card card-brazil"
+                  data-news-card
+                  tabindex="0"
+                  aria-expanded="false"
+                  aria-controls="news-detail-3"
+                  id="news-card-3"
+                >
+                  <div class="card__bg" aria-hidden="true"></div>
+                  <div class="card__body">
+                    <span class="card__meta">Brazil</span>
+                    <h3 class="card__title">Nationwide outage</h3>
+                    <p class="card__text">
+                      A country-sized blind spot. Millions in the dark while dependencies stacked silently.
+                    </p>
+                    <a class="card__link" href="#" data-news-link>View Incident →</a>
+                  </div>
+                  <div class="card__expand" id="news-detail-3" aria-hidden="true">
+                    <p class="card__extra">
+                      Restoration lagged not from a single switch, but from cascaded interlocks and the time required to re-sequence safely.
+                    </p>
+                    <time class="card__time" datetime="2024-08">August 2024</time>
+                  </div>
+                </article>
+
+                <article
+                  class="card card--news news-card card-chile"
+                  data-news-card
+                  tabindex="0"
+                  aria-expanded="false"
+                  aria-controls="news-detail-4"
+                  id="news-card-4"
+                >
+                  <div class="card__bg" aria-hidden="true"></div>
+                  <div class="card__body">
+                    <span class="card__meta">Chile</span>
+                    <h3 class="card__title">System failure</h3>
+                    <p class="card__text">
+                      Cascade effects exposed brittle edges. What held until it didn’t.
+                    </p>
+                    <a class="card__link" href="#" data-news-link>View Incident →</a>
+                  </div>
+                  <div class="card__expand" id="news-detail-4" aria-hidden="true">
+                    <p class="card__extra">
+                      Edge cases accumulated invisibly until a routine event crossed a threshold no dashboard had named.
+                    </p>
+                    <time class="card__time" datetime="2025-03">March 2025</time>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div
+              id="panel-x"
+              class="news-sidebar__panel news-sidebar__panel--x"
+              role="tabpanel"
+              aria-labelledby="tab-x"
             >
-              <div class="card__bg" aria-hidden="true"></div>
-              <div class="card__body">
-                <span class="card__meta">Chile</span>
-                <h3 class="card__title">System failure</h3>
-                <p class="card__text">
-                  Cascade effects exposed brittle edges. What held until it didn’t.
-                </p>
-                <a class="card__link" href="#" data-news-link>View Incident →</a>
+              <p class="x-feed__intro">
+                Field feed loads first — five signals with on-page video or photo, each linking to the source post on X. Switch to <strong>2025 Grid</strong> for the archived incident cards.
+              </p>
+              <div id="x-feed" class="x-feed">
+                <article class="x-feed__item x-feed__item--manual">
+                  <div class="x-feed__item-bar">
+                    <span class="x-feed__sig">SIG 01</span>
+                    <span class="x-feed__badge">Manual · X source</span>
+                    <span class="x-feed__live" aria-hidden="true">●</span>
+                  </div>
+                  <div class="x-feed__manual">
+                    <p class="x-feed__kicker">Isfahan · Badr Military Airport</p>
+                    <p class="x-feed__deck">
+                      Coalition ordnance: 2,000 lb bunker busters. Hit the apron and the chain reaction didn’t stop — secondary blasts, cook-offs, sky lit for hours.
+                    </p>
+                    <p class="x-feed__hook">
+                      When a GBU-31 cracks a hardened stockpile, you’re not watching one explosion — you’re watching inventory burn on a timer.
+                    </p>
+                    <div class="x-feed__media">
+                      <video
+                        class="x-feed__video"
+                        controls
+                        playsinline
+                        preload="metadata"
+                        aria-label="Footage related to the Isfahan airport report"
+                      >
+                        <source src="assets/x-feed-01-isfahan.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                    <p class="x-feed__cite">
+                      Via
+                      <a
+                        class="x-feed__cite-link"
+                        href="https://x.com/MarioNawfal/status/2038815733463818364"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >@MarioNawfal on X</a
+                      >
+                      — open for full context, replies, and source clip.
+                    </p>
+                    <a
+                      class="x-feed__open x-feed__open--primary"
+                      href="https://x.com/MarioNawfal/status/2038815733463818364"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Watch the full post on X →</a
+                    >
+                  </div>
+                </article>
+
+                <article class="x-feed__item x-feed__item--manual">
+                  <div class="x-feed__item-bar">
+                    <span class="x-feed__sig">SIG 02</span>
+                    <span class="x-feed__badge">Manual · X source</span>
+                    <span class="x-feed__live" aria-hidden="true">●</span>
+                  </div>
+                  <div class="x-feed__manual">
+                    <p class="x-feed__kicker">Breaking · Isfahan · Enrichment / weapons R&amp;D</p>
+                    <p class="x-feed__deck">
+                      A major U.S. and Israeli Air Force strike package — overnight, intelligence-led — targeted a uranium enrichment and nuclear weapons development node in Isfahan, Iran. Per the wire: facility destroyed; the operation framed as a decisive win for allied airpower.
+                    </p>
+                    <p class="x-feed__hook">
+                      “The world is safer” is the headline energy. Whether you buy the thesis or audit the footage — the post is where the receipts live.
+                    </p>
+                    <div class="x-feed__media">
+                      <video
+                        class="x-feed__video"
+                        controls
+                        playsinline
+                        preload="metadata"
+                        aria-label="Footage related to the Isfahan enrichment facility report"
+                      >
+                        <source src="assets/x-feed-02-enrichment.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                    <p class="x-feed__cite">
+                      <a
+                        class="x-feed__cite-link"
+                        href="https://x.com/i/status/2038796578232905960"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Full post on X</a
+                      >
+                      — context, replies, and primary source.
+                    </p>
+                    <a
+                      class="x-feed__open x-feed__open--primary"
+                      href="https://x.com/i/status/2038796578232905960"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Open the full thread on X →</a
+                    >
+                  </div>
+                </article>
+
+                <article class="x-feed__item x-feed__item--manual">
+                  <div class="x-feed__item-bar">
+                    <span class="x-feed__sig">SIG 03</span>
+                    <span class="x-feed__badge">Manual · X source</span>
+                    <span class="x-feed__live" aria-hidden="true">●</span>
+                  </div>
+                  <div class="x-feed__manual">
+                    <p class="x-feed__kicker">Cuba · Nationwide grid</p>
+                    <p class="x-feed__deck">
+                      A power outage hit the entire island on Saturday — the second country-wide blackout in under a week — as the system buckles under strain and a long-running U.S. oil blockade. Power began returning Sunday in parts of Havana while crews raced to bring the rest of the island back online.
+                    </p>
+                    <p class="x-feed__hook">
+                      One island, one grid, repeated total loss — that’s not a glitch, it’s a margin problem with a geopolitical address.
+                    </p>
+                    <div class="x-feed__media">
+                      <video
+                        class="x-feed__video"
+                        controls
+                        playsinline
+                        preload="metadata"
+                        aria-label="Footage related to the Cuba nationwide power outage report"
+                      >
+                        <source src="assets/x-feed-03-cuba-grid.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                    <p class="x-feed__cite">
+                      Source wire:
+                      <a
+                        class="x-feed__cite-link"
+                        href="https://x.com/AFP/status/2035816400565019093"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >AFP on X</a
+                      >
+                      — full post and updates.
+                    </p>
+                    <a
+                      class="x-feed__open x-feed__open--primary"
+                      href="https://x.com/AFP/status/2035816400565019093"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Open the full post on X →</a
+                    >
+                  </div>
+                </article>
+
+                <article class="x-feed__item x-feed__item--manual">
+                  <div class="x-feed__item-bar">
+                    <span class="x-feed__sig">SIG 04</span>
+                    <span class="x-feed__badge">Manual · X source</span>
+                    <span class="x-feed__live" aria-hidden="true">●</span>
+                  </div>
+                  <div class="x-feed__manual">
+                    <p class="x-feed__kicker">Cuba · Total blackout</p>
+                    <p class="x-feed__deck">
+                      🚨 NOW: A total blackout slammed the island — virtually no electricity across Cuba as the system struggles under oil and energy pressure. The story on the wire: regime stress, rising demand, and a grid that keeps failing in full view.
+                    </p>
+                    <p class="x-feed__hook">
+                      When an entire country goes dark twice in days, the headline isn’t “maintenance” — it’s systemic fragility.
+                    </p>
+                    <div class="x-feed__media">
+                      <video
+                        class="x-feed__video"
+                        controls
+                        playsinline
+                        preload="metadata"
+                        aria-label="Footage related to the Cuba total blackout report"
+                      >
+                        <source src="assets/x-feed-04-cuba-blackout.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                    <p class="x-feed__cite">
+                      <a
+                        class="x-feed__cite-link"
+                        href="https://x.com/BarronTNews_/status/2033641741878706324"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >BarronTNews_ on X</a
+                      >
+                      — thread, context, and discussion.
+                    </p>
+                    <a
+                      class="x-feed__open x-feed__open--primary"
+                      href="https://x.com/BarronTNews_/status/2033641741878706324"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Open the full post on X →</a
+                    >
+                  </div>
+                </article>
+
+                <article class="x-feed__item x-feed__item--manual">
+                  <div class="x-feed__item-bar">
+                    <span class="x-feed__sig">SIG 05</span>
+                    <span class="x-feed__badge">Manual · Photo</span>
+                    <span class="x-feed__live" aria-hidden="true">●</span>
+                  </div>
+                  <div class="x-feed__manual">
+                    <p class="x-feed__kicker">Egypt · Streets after curfew</p>
+                    <p class="x-feed__deck">
+                      🚨🇪🇬 BREAKING: Streets across Egypt go dark after government orders shops to close early to save power — framed against spillover from the war in Iran. Headlights replace streetlights; the “new normal” looks like this.
+                    </p>
+                    <p class="x-feed__hook">
+                      When policy is “turn off early,” the blackout isn’t technical only — it’s rationing by another name.
+                    </p>
+                    <div class="x-feed__media">
+                      <img
+                        class="x-feed__photo"
+                        src="assets/x-feed-05-egypt.png"
+                        loading="lazy"
+                        decoding="async"
+                        alt="Night street in Egypt: darkened road, pedestrians and cars, headlights cutting through blackout conditions"
+                      />
+                    </div>
+                    <p class="x-feed__cite">
+                      <a
+                        class="x-feed__cite-link"
+                        href="https://x.com/i/status/2038151938668368279"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Full post on X</a
+                      >
+                      — source and replies.
+                    </p>
+                    <a
+                      class="x-feed__open x-feed__open--primary"
+                      href="https://x.com/i/status/2038151938668368279"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Open the full post on X →</a
+                    >
+                  </div>
+                </article>
               </div>
-              <div class="card__expand" id="news-detail-4" aria-hidden="true">
-                <p class="card__extra">
-                  Edge cases accumulated invisibly until a routine event crossed a threshold no dashboard had named.
-                </p>
-                <time class="card__time" datetime="2025-03">March 2025</time>
-              </div>
-            </article>
+            </div>
           </div>
         </aside>
 
@@ -396,6 +718,19 @@
         </div>
       </footer>
     </main>
+
+    <!-- Intro SFX (typing loop while animating; enter click ~1s — see script.js) -->
+    <audio id="intro-typing-sfx" preload="auto" playsinline loop>
+      <source src="assets/typing-keyboard.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="intro-enter-sfx" preload="auto" playsinline>
+      <source src="assets/enter-keyboard.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Playlist: track 1 → track 2 → loop (see script.js). -->
+    <audio id="bg-music" preload="auto" playsinline>
+      <source src="assets/bg-music.mp3" type="audio/mpeg" />
+    </audio>
 
     <script src="script.js" defer></script>
   </body>
