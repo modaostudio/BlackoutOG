@@ -374,9 +374,13 @@
     if (!audio || !btn) return;
 
     var label = btn.querySelector(".sound-toggle__text");
-    var vol = 0.36;
-    var playlist = ["assets/bg-music.mp3", "assets/bg-music-2.mp3"];
-    /** Per-track gain (trek 2 di file sering lebih pelan — ~200% vs trek 1). Max volume browser = 1. */
+    /** Dasar volume pemutar (0–1). Di GitHub file MP3 tidak diubah — yang membatasi hanya level encode + nilai ini. */
+    var vol = 0.72;
+    var playlist = [
+      "assets/bg-music.mp3",
+      "assets/bg-music-2.mp3" /* Backsound Menegangkan FINAL REO */
+    ];
+    /** Trek 2 sering lebih pelan di file sumber — 2× lalu dibatasi ke 1 (maks browser). */
     var volumeGainByTrack = [1, 2];
     var trackIndex = 0;
     var userMuted = false;
