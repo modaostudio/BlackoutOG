@@ -11,6 +11,17 @@
   var twitterScriptAppended = false;
   var xWidgetsLoaded = false;
 
+  /** Resolve relative asset paths against document base (GitHub Pages /RepoName/). */
+  function resolveAssetUrl(relPath) {
+    try {
+      var s = String(relPath).trim();
+      if (!s || /^https?:\/\//i.test(s)) return s;
+      return new URL(s, document.baseURI).href;
+    } catch (e) {
+      return relPath;
+    }
+  }
+
   var FIRST_DELAY_MS = 420;
   var LINE_GAP_MS = 400;
   var BUTTON_DELAY_MS = 520;
@@ -255,14 +266,8 @@
 
   function setCardBg(element, imageUrl) {
     if (!element) return;
-    var resolved = String(imageUrl).trim();
-    try {
-      if (!/^https?:\/\//i.test(resolved)) {
-        resolved = new URL(resolved, document.baseURI).href;
-      }
-    } catch (e) {
-      return;
-    }
+    var resolved = resolveAssetUrl(imageUrl);
+    if (!resolved) return;
     element.style.backgroundImage =
       "linear-gradient(rgba(10,10,10,0.68), rgba(10,10,10,0.78)), url(" +
       JSON.stringify(resolved) +
@@ -421,7 +426,7 @@
       if (userMuted) return;
       advancing = true;
       trackIndex = (trackIndex + 1) % playlist.length;
-      audio.src = playlist[trackIndex];
+      audio.src = resolveAssetUrl(playlist[trackIndex]);
       audio.load();
       playCurrent();
     });

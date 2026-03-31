@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Blackout OG — when the system goes dark, we see clearly." />
-    <title>Blackout OG</title>
-    <!-- GitHub Pages project sites live at /RepoName/ — set base so style.css & assets load (localhost unchanged). -->
+    <!-- GitHub Pages project sites: /user.github.io/RepoName/ — <base> fixes relative URLs when path has no trailing slash. Insert after charset (never before it). -->
     <script>
       (function () {
         if (!location.hostname.endsWith("github.io")) return;
@@ -13,9 +10,17 @@
         if (!segs.length) return;
         var b = document.createElement("base");
         b.href = "/" + segs[0] + "/";
-        document.head.insertBefore(b, document.head.firstChild);
+        var charset = document.querySelector("meta[charset]");
+        if (charset) {
+          charset.insertAdjacentElement("afterend", b);
+        } else {
+          document.head.insertBefore(b, document.head.firstChild);
+        }
       })();
     </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Blackout OG — when the system goes dark, we see clearly." />
+    <title>Blackout OG</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
