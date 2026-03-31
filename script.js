@@ -376,6 +376,8 @@
     var label = btn.querySelector(".sound-toggle__text");
     var vol = 0.36;
     var playlist = ["assets/bg-music.mp3", "assets/bg-music-2.mp3"];
+    /** Per-track gain (trek 2 di file sering lebih pelan — ~200% vs trek 1). Max volume browser = 1. */
+    var volumeGainByTrack = [1, 2];
     var trackIndex = 0;
     var userMuted = false;
     var advancing = false;
@@ -391,7 +393,9 @@
     }
 
     function playCurrent() {
-      audio.volume = vol;
+      var gain = volumeGainByTrack[trackIndex];
+      if (gain == null || gain < 0) gain = 1;
+      audio.volume = Math.min(1, vol * gain);
       var p = audio.play();
       if (p && typeof p.then === "function") {
         p.catch(function () {
